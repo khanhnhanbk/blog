@@ -7,7 +7,8 @@ router.get("/", (req, res) => {
     title: "Home",
     description: "This is the home page",
   };
-  res.render("index", { locals });
+  const data = [{ title: "First Post", createdAt: new Date() }];
+  res.render("index", { locals, data, nextPage: null });
 });
 
 router.get("/about", (req, res) => {
