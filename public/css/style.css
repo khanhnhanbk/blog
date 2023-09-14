@@ -16,7 +16,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--black);
   font-size: var(--font-size-base);
-  background-color: #FAF5EE;
+  background-color: #faf5ee;
   background-image: url("/img/img-noise-361x370.png");
   margin: 0;
 }
@@ -230,6 +230,7 @@ img {
 
 .article-ul li {
   font-size: 24px;
+  padding: 5px 2px;
   cursor: pointer;
   transition: filter 0.1s;
 }
@@ -238,16 +239,16 @@ img {
   border-bottom: 1px solid var(--gray-light);
 }
 
-.article-ul li:hover {
+/* .article-ul li:hover {
   filter: none;
 }
 
 .article-ul:hover li {
   filter: blur(3px);
-}
+} */
 
 .article-ul:hover li:hover {
-  filter: none;
+  background-color: #e3ddd5;
 }
 
 

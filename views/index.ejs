@@ -11,7 +11,7 @@
   height="528"
 />
 
-<section class="articles">
+<section class="articles" id="articles">
   <h2 class="articles__heading">Latest Posts</h2>
 
   <ul class="article-ul">
@@ -20,7 +20,7 @@
       <a href="/post/<%= post._id %>">
         <span><%= post.title %></span>
         <span class="article-list__date"
-          ><%= post.createdAt.toDateString() %></span
+          ><%= post.createAt.toDateString() %></span
         >
       </a>
     </li>
@@ -28,6 +28,8 @@
   </ul>
 
   <% if (nextPage !== null) { %>
-  <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+  <a href="/?page=<%= nextPage %>#articles" class="pagination"
+    >&lt; View Older Posts</a
+  >
   <% } %>
 </section>
