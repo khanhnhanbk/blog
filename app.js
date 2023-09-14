@@ -21,6 +21,7 @@ app.set("view engine", "ejs");
 
 // Routes
 app.use("/", require("./server/routes/main"));
+app.use("/", require("./server/routes/admin.js"));
 
 app.listen(PORT, () => {
   console.log(`Server started on http://localhost:${PORT}/`);
