@@ -17,4 +17,12 @@ router.get("/admin", async (req, res) => {
   }
 });
 
+router.post("/admin", async (req, res) => {
+  try {
+    console.log(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

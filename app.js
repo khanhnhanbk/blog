@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const bodyParser = require("body-parser");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 5000;
 
 // Static files
 app.use(express.static("public"));
-
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 // Database
 connectDB();
 

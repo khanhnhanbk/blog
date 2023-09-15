@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
     description: "This is my personal blog.",
   };
   try {
-    // Get all posts from DB, sort by date, and limit to 10
     const page = req.query.page || 1;
     const limit = 5;
     const skip = (page - 1) * limit;
@@ -18,12 +17,10 @@ router.get("/", async (req, res) => {
       .sort({ createdAt: -1 })
       .limit(limit)
       .skip(skip);
-    // Get total number of posts
-    const count = await Post.countDocuments();
 
+    const count = await Post.countDocuments();
     const nextPage =
       page < Math.ceil(count / limit) ? parseInt(page) + 1 : null;
-
     res.render("index", { locals, data, nextPage });
   } catch (error) {
     console.log(error);
